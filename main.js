@@ -92,7 +92,6 @@ canvas.addEventListener("mousedown", (e) => {
   point.x = e.clientX;
   point.y = e.clientY;
   selector.readImgColor(point.x,point.y)
-
 });
 
 document.querySelector("#bgCtn span button").addEventListener("click",function(){
@@ -247,3 +246,15 @@ label:hover >cite{
 
 
 $("head").append(`<style>${css}</style>`)
+
+
+
+ 
+ //register serviceworker
+ if("serviceWorker" in window.navigator){
+   navigator.serviceWorker.register("sw.js").then(e => {
+     console.log("sw.js" , e)
+   });
+ }
+ 
+ 
